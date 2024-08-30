@@ -27,6 +27,14 @@ let multiplyByTen = multiply.bind(this, 10);
 multiplyByTen(10);
 
 // 2)by using closures
+function value(a) {
+  function fun(b) {
+    return a + b;
+  }
+  return fun;
+}
+
+console.log(value(10)(15));
 
 let multiplyByClosure = function (x) {
   return function (y) {
@@ -67,3 +75,21 @@ const throttle = (fn, delay) => {
 // 2) if e.stopPropogation is used in child, then events are not bubbled up
 
 //HOF i.e.,  Higher Order Function are  functions that take other functions as arguments or return functions as output e.g map,callback functions etc...
+
+//promises
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const data = "Fetched data";
+      resolve(data);
+    }, 3000);
+  });
+}
+
+fetchData()
+  .then((data) => {
+    console.log(data); // Logs "Fetched data" after 2 seconds
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
