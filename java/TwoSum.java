@@ -12,7 +12,8 @@ public class Main
 			}
 			numMap.put(nums[i], i);
 		}
-		throw new IllegalArgumentException("No two sum solution");
+		return new int[] {};//empty array where no two sum is possible
+		//throw new IllegalArgumentException("No two sum solution");
 	}
 	public static void main(String[] args) {
 		int[] nums= {1,2,3,4,5,6};
