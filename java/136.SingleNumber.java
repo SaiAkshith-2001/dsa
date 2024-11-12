@@ -18,9 +18,6 @@ public class Main
 		int count = 0;
 		for (int i = 0; i < nums.length; i++) {
 			count ^= nums[i]; // XOR operation 1^1=0
-			if(count==1) {
-				return nums[i];
-			}
 		}
 		return count;
 	}
