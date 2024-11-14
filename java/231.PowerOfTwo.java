@@ -14,11 +14,16 @@ public class Main {
 	// 	}
 	// 	return false;
     
-  //  Method 3
-  //   	if(n==1) return true;
-		// return Math.floor(Math.log(n)/Math.log(2))==Math.ceil(Math.log(n)/Math.log(2));
-	 }
-
+	//  Method 3
+	//   	if(n==1) return true;
+	// return Math.floor(Math.log(n)/Math.log(2))==Math.ceil(Math.log(n)/Math.log(2));
+		
+ // Method 4
+ // while(i%2==0){
+ // 	i/=2;
+ // }
+ // return i==1;
+	}
 	public static void main(String[] args) {
 		System.out.println(isPowerOfTwo(8));  //true
 	}
