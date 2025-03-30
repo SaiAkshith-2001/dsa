@@ -9,7 +9,7 @@ public class Main {
 			currentSum+=arr[i];
 		}
 		for(int i=k; i<arr.length; i++) {
-			currentSum+=arr[i]-arr[i-k];
+			currentSum+=arr[i]-arr[i-k];        //adding next elements to the window and removing the prev first elements form the window
 			maxSum=Math.max(maxSum,currentSum);
 		}
 		return maxSum;
