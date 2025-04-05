@@ -1,4 +1,22 @@
 public class Main {
+
+	// Navie Approach
+	// public static int maxSubArray(int[] arr,int k) {
+	// 	int maxSum=Integer.MIN_VALUE;
+	// 	if(arr.length<=k) {
+	// 		System.out.println("Invalid!");
+	// 	}
+	// 	for(int i=0; i<arr.length-k+1; i++) {
+	// 		int currentSum=0;		
+	// 		for(int j=0; j<k; j++) {
+	// 			currentSum+=arr[i+j];
+	// 	}
+	// 	maxSum=Math.max(maxSum,currentSum);
+	// 	}
+	// 	return maxSum;
+	// }
+
+	//Optimal Approach
 	public static int maxSubArray(int[] arr,int k) {
 		int maxSum=Integer.MIN_VALUE;
 		int currentSum=0;
