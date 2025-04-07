@@ -1,6 +1,6 @@
 public class Main {
 
-	// Navie Approach
+	// Navie Approach	Time complexity: O(n*n) Space complexity: O(1)
 	// public static int maxSubArray(int[] arr,int k) {
 	// 	int maxSum=Integer.MIN_VALUE;
 	// 	if(arr.length<=k) {
@@ -16,7 +16,7 @@ public class Main {
 	// 	return maxSum;
 	// }
 
-	//Optimal Approach
+	//Optimal Approach	Time complexity: O(n) Space complexity: O(1)
 	public static int maxSubArray(int[] arr,int k) {
 		int maxSum=Integer.MIN_VALUE;
 		int currentSum=0;
