@@ -35,8 +35,27 @@ public class LinkedList
 		}
 		currentNode.next=newNodeLast;
 	}
+	public Node addElementAtNthIndex(int data,int index) {
+		Node newNode=new Node(data);
+		if(index==0) {
+			newNode.next=head;
+			head=newNode;
+			return head;
+		}
+		Node currentNode=head;
+		if(currentNode==null) {
+			System.out.print("index out of bounds");
+		}
+		int currentIndex=0;
+		while(currentNode!=null&&currentIndex<index-1) {
+			currentNode=currentNode.next;
+			currentIndex++;
+		}
+		newNode.next=currentNode.next;
+		currentNode.next=newNode;
+		return head;
+	}
 	public void deleteNodeAtFirst() {
-
 		if(head==null) {
 			System.out.println("no elements in list");
 			return;
@@ -65,6 +84,42 @@ public class LinkedList
 			currentNode=currentNode.next;
 		}
 		currentNode.next=null;
+	}
+	public Node deleteElementAtNthIndex(int index) {
+		if(head==null) {
+			System.out.println("list is empty");
+			return head;
+		}
+		if(index==0) {
+			head=head.next;
+			return head;
+		}
+		Node currentNode=head;
+		if(currentNode==null||index-1>size) {
+			System.out.print("index out of bounds\n");
+			return head;
+		}
+		int currentIndex=0;
+		while(currentNode!=null&&currentIndex<index-1) {
+			currentNode=currentNode.next;
+			currentIndex++;
+		}
+		currentNode.next=currentNode.next.next;
+		size--;
+		return head;
+	}
+	public int findMiddleElement() {
+		if (head == null) {
+			throw new IllegalStateException("The list is empty.");
+		}
+
+		Node fastPointer=head;
+		Node slowPointer=head;
+		while(fastPointer.next!=null&&fastPointer.next.next!=null) {
+			slowPointer=slowPointer.next;
+			fastPointer=fastPointer.next.next;
+		}
+		return slowPointer.data;
 	}
 	public void displayLinkedList() {
 		if(head==null) {
